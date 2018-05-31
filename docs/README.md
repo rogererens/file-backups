@@ -1,5 +1,9 @@
 # File Backup Utility For TiddlyWiki
 
+## Feature Requests
+
+If you need a new feature: click -> [![Feature Requests](http://feathub.com/pmario/file-backups?format=svg)](http://feathub.com/pmario/file-backups)
+
 ## Introduction
 This browser add on is designed to let you easily save and backup TiddlyWikis. It is a file-based system for a single user. If you'd like your TiddlyWiki available over the network or in the cloud, please check out other options at "Getting Started With TiddlyWiki"[1].
 
