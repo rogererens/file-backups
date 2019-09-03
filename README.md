@@ -43,32 +43,31 @@ the backup folder defaults to
 
 The backups are created using a slightly modified "Tower of Hanoi" rotation strategy, similar to some tape based backup software.
 
-The following table shows the numbering system, with 4 different files.
+The following table shows the numbering system, with backups of your file saved to 4 different backup files.
 
 |Backup Number | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |9 |10|11|12|13|14|15|16
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
 | File A | A| |A| |A| |A| |A| |A| |A| |A| 
 | File B | |B||||B||||B||||B||
 | File C | |||C||||||||C|||
-|File D | |||||||D||||||||D
+| File D | |||||||D||||||||D
 
 So the order will be: A, B, A, C, A, B, A, D, A, B, A, C, A, B, A, D, ... 
 
 As you can see: 
 
- - A will be overwritten with every 2nd save
- - B will be written every 4th
- - C 8th
- - D 16th ... 
+ - A will be overwritten with every 2nd backup after its initial creation
+ - B will be overwritten every 4th backup after its initial creation
+ - C will be overwritten every 8th backup after its initial creation
+ - D will be overwritten every 16th backup
  
-The generic order is: 2<sup> n-1</sup>.
+The generic order is: 2<sup> n-1</sup> where n is the number of different backup files.
 
-Files can be restored from 1, 2, 4, 8, 16, ..., 2<sup> n-1</sup> saves ago!
+Your files can be restored from 1, 2, 4, 8, 16, ..., 2<sup> n-1</sup> backups ago!
 
-Working with 11 files will result in 512 saves, before K is overwritten the first time. Then it will need another 1024 saves until it is overwritten again.
+Working with 11 different backup files (A to K) will result in 512 saves, before K is written the initially. Then it will need another 1024 saves until it is overwritten again.
 
-Eg: Starting with A, if you save your file twice a minute for eight hours, you will still have not overwriten K.
-K is save #1024 and 2 * 60 * 8 = **960**.
+Eg: Starting with A, if you save your file twice a minute for eight hours, you will still have not overwritten K after those 8 hours, since there are 2 * 60 * 8 = **960** in that period, whereas K is only to be overwritten in backup #1024.
 
 ### The Modification
 
